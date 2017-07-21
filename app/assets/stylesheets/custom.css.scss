@@ -1,6 +1,79 @@
-$navbar-default-bg: #000;
-$light-orange: #ff8c00;
-$navbar-default-color: $light-orange;
+$navbar-default-bg: #75061B;
+
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+body{
+  background-color: #FCE1CF;
+}
+
+.well{
+  background-color: #000;
+  opacity: .6;
+  color: #fff;
+}
+
+jumbotron h1{
+  color: #fff;
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+jumbotron h2{
+  font-size: 2em;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color:#fff;
+}
+
+.jumbotron{
+  color: #fff;
+  background-image:asset-url('cover.jpeg');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  height: 400px;
+}
+
+#logo{
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo:hover{
+  color: #fff;
+  text-decoration: none;
+}
+
+.center{
+  text-align: center;
+}
+
+.btn-lg{
+  background-color:#75061B;
+  font-weight: bold;
+ }
+ 
+ .btn{
+   background-color:#75061B;
+   color:#fff;
+ }
+ 
+ .row{
+   text-align: center;
+ }
+ 
+ .footer{
+  margin-top: 25px;
+  border-top: 2px solid #75061B;
+  color: #75061B;
+  text-align: center;
+}
+
