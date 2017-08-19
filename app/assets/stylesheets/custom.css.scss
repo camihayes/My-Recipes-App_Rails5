@@ -11,8 +11,10 @@ body{
 
 .well{
   background-color: #000;
-  opacity: .6;
+  opacity: .9;
   color: #fff;
+ 
+  
 }
 
 jumbotron h1{
@@ -66,10 +68,6 @@ jumbotron h2{
    color:#fff;
  }
  
- .row{
-   text-align: center;
- }
- 
  .footer{
   margin-top: 25px;
   border-top: 2px solid #75061B;
@@ -88,3 +86,11 @@ a:focus {
 }
 
 hr { background-color: #75061B ; height: 1px; border: 0; }
+
+.description {
+  margin-top: 0;
+}
+
+.chef_info{
+  margin-top: 10px;
+}
