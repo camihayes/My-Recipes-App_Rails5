@@ -7,7 +7,7 @@ class ChefsShowTest < ActionDispatch::IntegrationTest
     @recipe = Recipe.create(name: "vegetable saute", description: "great vegetable saute, add vegetable and oil", chef: @chef)
     @recipe2 = @chef.recipes.build(name: "chicken saute", description: "great chicken dish")
     @recipe2.save
-  end
+   end
   
   test "should get chefs show" do
     get chef_path(@chef)

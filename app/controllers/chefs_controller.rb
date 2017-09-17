@@ -1,6 +1,8 @@
 class ChefsController < ApplicationController
   before_action :set_chef, only: [:show, :edit, :update, :destroy]
   before_action :require_same_user, only: [:edit, :update, :destroy]
+  before_action :require_admin, only: [:destroy]
+  
   
   
   def index
@@ -15,6 +17,7 @@ class ChefsController < ApplicationController
     @chef = Chef.new(chef_params)
     if @chef.save
       session[:chef_id] = @chef.id
+      cookies.signed[:chef_id] = @chef.id
       flash[:success] = "Welcome #{@chef.chefname} to MyRecipes App!"
       redirect_to chef_path(@chef)
     else
@@ -40,9 +43,11 @@ class ChefsController < ApplicationController
   end
   
   def destroy
-    @chef.destroy
-    flash[:danger] = "Chef and all associated recipes have been deleted!"
+    if !@chef.admin?
+      @chef.destroy
+      flash[:danger] = "Chef and all associated recipes have been deleted!"
     redirect_to chefs_path
+    end
   end
   
   private
@@ -56,9 +61,16 @@ class ChefsController < ApplicationController
   end
   
   def require_same_user
-    if current_chef != @chef
+    if current_chef != @chef and !current_chef.admin?
       flash[:danger] = "You can only edit or delete your own account"
       redirect_to chefs_path
+    end
+  end
+  
+  def require_admin
+    if logged_in? && !current_chef.admin?
+      flash[:danger] = "Only admin users can perform that action"
+      redirect_to root_path
     end
   end
 end
