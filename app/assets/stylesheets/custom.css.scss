@@ -73,6 +73,9 @@ jumbotron h2{
   border-top: 2px solid #75061B;
   color: #75061B;
   text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  
 }
 
 a{
@@ -103,4 +106,8 @@ hr { background-color: #75061B ; height: 1px; border: 0; }
 .chef-title{
   font-weight: bold;
   font-size: 1.25em;
+}
+
+.input_checkbox input{
+  width: auto !important;
 }
