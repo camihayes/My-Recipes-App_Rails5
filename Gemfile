@@ -29,6 +29,7 @@ gem 'rails_12factor'
 gem 'carrierwave', '0.11.2'
 gem 'mini_magick'
 gem 'fog'
+gem 'fog-aws'
 
 group :development, :test do
   gem 'sqlite3'
